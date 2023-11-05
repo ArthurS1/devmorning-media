@@ -8,14 +8,16 @@ Make sure you have `make` and `inkscape` installed in your unix environment.
 
 You can generate all assets with :
 
-```bash
+```
 $> make
 ```
 
 If you need a transparent or colored background, you can generate with :
 
-```bash
-$> make BACKGROUND=#000000
+*(You need to escape the #, else it will be interpreted as a comment.)*
+
+```
+$> make BACKGROUND=\#000000
 ```
 
 You can clean the destination with :
