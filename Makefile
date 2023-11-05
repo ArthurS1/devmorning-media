@@ -10,13 +10,14 @@ PNG 				:= $(SVG:.svg=.png)
 
 DEST 			 	:= build
 
+BUILT_PNG		:= $(addprefix $(DEST)/, $(PNG))
+
+
 %.png : %.svg
 	@echo -e "------\nExporting $<\n------"
-	$(INKSCAPE) --export-type="png" --export-background=$(BACKGROUND) -o $<
+	$(INKSCAPE) --export-type="png" --export-background=$(BACKGROUND) -o $@ $<
 
-all: move
-
-move: pngs
+$(BUILT_PNG): pngs
 	mkdir -p $(DEST)
 	mv -t $(DEST) $(PNG)
 	@echo -e "------\nMoved to build folder\n------"
