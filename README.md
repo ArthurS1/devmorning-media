@@ -2,6 +2,28 @@
 
 You will find here all assets related with the DevMorning group.
 
+## How to generate ?
+
+Make sure you have `make` and `inkscape` installed in your unix environment.
+
+You can generate all assets with :
+
+```bash
+$> make
+```
+
+If you need a transparent or colored background, you can generate with :
+
+```bash
+$> make BACKGROUND=#000000
+```
+
+You can clean the destination with :
+
+```
+$> make clean
+```
+
 ## What is DevMorning ?
 
 DevMorning is a self-study meetup for software developers.
