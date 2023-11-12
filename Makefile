@@ -1,21 +1,34 @@
-SVG 				:= 	devmorning_large.svg 		\
-								devmorning.svg 					\
-								devmorning_github.svg
+SVG 				:= 	devmorning.svg 					\
+								devmorning_github.svg		\
+								devmorning_large.svg
 
-BACKGROUND 	:= \#ffffff
+BACKGROUND 	:=	\#ffffff
 
-INKSCAPE 		:= inkscape
+INKSCAPE 		:=	inkscape
 
-PNG 				:= $(SVG:.svg=.png)
+PNG 				:=	$(SVG:.svg=.png)
 
-DEST 			 	:= build
+DEST 			 	:=	build
 
-BUILT_PNG		:= $(addprefix $(DEST)/, $(PNG))
+BUILT_PNG		:=	$(addprefix $(DEST)/, $(PNG))
 
+DEFAULT			:=	fg bg all
+
+CITY				:= 	bangkok
+
+EMPTY				:=
+
+SPACE				:= $(EMPTY) $(EMPTY)
 
 %.png : %.svg
 	@echo -e "------\nExporting $<\n------"
-	$(INKSCAPE) --export-type="png" --export-background=$(BACKGROUND) -o $@ $<
+	$(INKSCAPE) \
+		--export-id="$(subst $(SPACE),;,$(DEFAULT));$(CITY)"\
+		--export-id-only		\
+		--export-area-page	\
+		--export-type="png" \
+		--export-background=$(BACKGROUND) \
+		-o $@ $<
 
 $(BUILT_PNG): pngs
 	mkdir -p $(DEST)
