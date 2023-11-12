@@ -1,5 +1,6 @@
-SVG 				:= 	devmorning.svg 					\
-								devmorning_github.svg		\
+SVG 				:= 	devmorning.svg 						\
+								devmorning_github.svg			\
+								devmorning_podcast.svg		\
 								devmorning_large.svg
 
 BACKGROUND 	:=	\#ffffff
