@@ -1,6 +1,6 @@
 # Welcome to DevMorning Medias !
 
-You will find here all assets related with the DevMorning group.
+All media files related to DevMorning, associated groups, projects, and endeavours.
 
 ## How to generate ?
 
