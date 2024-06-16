@@ -5,6 +5,8 @@ SVG 				:= 	devmorning.svg 						\
 
 BACKGROUND 	:=	\#ffffff
 
+OPACITY 		:=  1.0
+
 INKSCAPE 		:=	inkscape
 
 PNG 				:=	$(SVG:.svg=.png)
@@ -29,6 +31,7 @@ SPACE				:= $(EMPTY) $(EMPTY)
 		--export-area-page	\
 		--export-type="png" \
 		--export-background=$(BACKGROUND) \
+		--export-background-opacity=$(OPACITY) \
 		-o $@ $<
 
 $(BUILT_PNG): pngs
